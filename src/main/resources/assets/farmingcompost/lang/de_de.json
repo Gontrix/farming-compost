@@ -2,5 +2,8 @@
   "block.farmingcompost.fertilized_soil": "Gedüngte Erde",
 
 
-  "item.farmingcompost.compost_soil": "Komposterde"
+  "item.farmingcompost.compost_soil": "Komposterde",
+
+
+  "itemGroup.farming_compost": "Farming Compost"
 }

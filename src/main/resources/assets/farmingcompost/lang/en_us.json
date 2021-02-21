@@ -2,5 +2,8 @@
   "block.farmingcompost.fertilized_soil": "Fertilized Soil",
 
 
-  "item.farmingcompost.compost_soil": "Compost Soil"
+  "item.farmingcompost.compost_soil": "Compost Soil",
+
+
+  "itemGroup.farming_compost": "Farming Compost"
 }

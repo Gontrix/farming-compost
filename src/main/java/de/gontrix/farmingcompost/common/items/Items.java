@@ -1,5 +1,6 @@
 package de.gontrix.farmingcompost.common.items;
 
+import de.gontrix.farmingcompost.common.FarmingCompostItemGroup;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -11,6 +12,8 @@ public class Items {
 
     @SubscribeEvent
     public static void onItemsRegistration(final RegistryEvent.Register<Item> itemRegisterEvent) {
+        FarmingCompostItemGroup.farmingCompost = FarmingCompostItemGroup.getFarmingCompostItemGroup();
+
         itemRegisterEvent.getRegistry().register(FertilizedSoil.getFertilizedSoil());
         itemRegisterEvent.getRegistry().register(CompostSoil.getCompostSoil());
     }

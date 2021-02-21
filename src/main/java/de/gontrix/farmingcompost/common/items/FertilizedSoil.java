@@ -1,10 +1,10 @@
 package de.gontrix.farmingcompost.common.items;
 
+import de.gontrix.farmingcompost.common.FarmingCompostItemGroup;
 import de.gontrix.farmingcompost.common.blocks.Blocks;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 
 public class FertilizedSoil extends BlockItem {
     public static final int MAXIMUM_STACK_SIZE = 64;
@@ -15,7 +15,7 @@ public class FertilizedSoil extends BlockItem {
     }
 
     public static FertilizedSoil getFertilizedSoil() {
-        Items.fertilizedSoil = new FertilizedSoil(Blocks.fertilizedSoil, new Item.Properties().maxStackSize(MAXIMUM_STACK_SIZE).group(ItemGroup.BUILDING_BLOCKS));
+        Items.fertilizedSoil = new FertilizedSoil(Blocks.fertilizedSoil, new Item.Properties().maxStackSize(MAXIMUM_STACK_SIZE).group(FarmingCompostItemGroup.farmingCompost));
         Items.fertilizedSoil.setRegistryName(Blocks.fertilizedSoil.getRegistryName());
 
         return Items.fertilizedSoil;

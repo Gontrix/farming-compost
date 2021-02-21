@@ -2,8 +2,12 @@
   "type": "minecraft:crafting_shapeless",
   "group": "farmingcompost",
   "ingredients": [
-    {"item": "minecraft:dirt"},
-    {"item": "farmingcompost:compost_soil"}
+    {
+      "item": "minecraft:dirt"
+    },
+    {
+      "item": "farmingcompost:compost_soil"
+    }
   ],
   "result": {
     "item": "farmingcompost:fertilized_soil",
