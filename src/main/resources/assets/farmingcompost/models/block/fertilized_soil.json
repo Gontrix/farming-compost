@@ -7,6 +7,6 @@
     "east": "farmingcompost:block/fertilized_soil/east",
     "south": "farmingcompost:block/fertilized_soil/south",
     "west": "farmingcompost:block/fertilized_soil/west",
-    "particle": "block/lapis_block"
+    "particle": "block/dirt"
   }
 }
