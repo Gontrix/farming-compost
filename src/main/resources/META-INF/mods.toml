@@ -1,0 +1,34 @@
+
+modLoader="javafml" #mandatory
+loaderVersion="[36,)"
+license="GPL 3"
+#issueTrackerURL="https://change.me.to.your.issue.tracker.example.invalid/"
+
+[[mods]] #mandatory
+modId="farmingcompost"
+version="${file.jarVersion}"
+displayName="Farming Compost"
+# A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
+updateJSONURL="https://raw.githubusercontent.com/Gontrix/farmingcompost/main/update.json" #optional
+displayURL="https://gontrix.de/"
+# A file name (in the root of the mod JAR) containing a logo for display
+logoFile="composting.png"
+credits=""
+authors="Gontrix"
+description='''
+Farming Mod with composter
+'''
+
+[[dependencies.farmingcompost]]
+    modId="forge"
+    mandatory=true
+    versionRange="[36,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.farmingcompost]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="BOTH"

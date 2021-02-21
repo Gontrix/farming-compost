@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "farmingcompost:item/compost_soil/item"
+  }
+}

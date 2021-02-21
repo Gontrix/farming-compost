@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "farmingcompost:block/fertilized_soil/down",
+    "up": "farmingcompost:block/fertilized_soil/up",
+    "north": "farmingcompost:block/fertilized_soil/north",
+    "east": "farmingcompost:block/fertilized_soil/east",
+    "south": "farmingcompost:block/fertilized_soil/south",
+    "west": "farmingcompost:block/fertilized_soil/west",
+    "particle": "block/lapis_block"
+  }
+}
