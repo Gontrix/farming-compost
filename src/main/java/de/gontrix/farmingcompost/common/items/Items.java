@@ -7,19 +7,16 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 public class Items {
-    public static FertilizedSoil fertilizedSoil;
     public static CompostSoil compostSoil;
+    public static FertilizedField fertilizedField;
+    public static FertilizedSoil fertilizedSoil;
 
     @SubscribeEvent
     public static void onItemsRegistration(final RegistryEvent.Register<Item> itemRegisterEvent) {
         FarmingCompostItemGroup.farmingCompost = FarmingCompostItemGroup.getFarmingCompostItemGroup();
 
-        itemRegisterEvent.getRegistry().register(FertilizedSoil.getFertilizedSoil());
         itemRegisterEvent.getRegistry().register(CompostSoil.getCompostSoil());
-    }
-
-    @SubscribeEvent
-    public static void onCommonSetupEvent(FMLCommonSetupEvent event) {
-        // not actually required for this example....
+        itemRegisterEvent.getRegistry().register(FertilizedField.getFertilizedField());
+        itemRegisterEvent.getRegistry().register(FertilizedSoil.getFertilizedSoil());
     }
 }
