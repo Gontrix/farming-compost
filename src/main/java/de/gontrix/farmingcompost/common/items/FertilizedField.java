@@ -1,23 +1,22 @@
 package de.gontrix.farmingcompost.common.items;
 
-import de.gontrix.farmingcompost.common.FarmingCompostItemGroup;
+import de.gontrix.farmingcompost.FarmingCompost;
 import de.gontrix.farmingcompost.common.blocks.Blocks;
-import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.registries.RegistryObject;
 
 public class FertilizedField extends BlockItem {
     public static final int MAXIMUM_STACK_SIZE = 64;
     public static final String NAME = "fertilized_field";
 
-    public FertilizedField(Block blockIn, Properties builder) {
-        super(blockIn, builder);
+    public FertilizedField() {
+        super(Blocks.FERTILIZED_FIELD.get(), new BlockItem.Properties().stacksTo(MAXIMUM_STACK_SIZE));
+        FarmingCompost.LOGGER.info("FarmingCompost FertilizedField");
     }
 
-    public static FertilizedField getFertilizedField() {
-        Items.fertilizedField = new FertilizedField(Blocks.fertilizedField, new Item.Properties().maxStackSize(MAXIMUM_STACK_SIZE).group(FarmingCompostItemGroup.farmingCompost));
-        Items.fertilizedField.setRegistryName(Blocks.fertilizedField.getRegistryName());
-
-        return Items.fertilizedField;
+    public static RegistryObject<Item> getFertilizedField() {
+        FarmingCompost.LOGGER.info("FarmingCompost getFertilizedField");
+        return Items.ITEMS.register(NAME, FertilizedField::new);
     }
 }
