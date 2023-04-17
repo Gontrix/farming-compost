@@ -6,11 +6,12 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+
 public class Blocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, FarmingCompost.MODID);
 
-    public static final RegistryObject<Block> FERTILIZED_SOIL = FertilizedSoil.getFertilizedSoil();
-    public static final RegistryObject<Block> FERTILIZED_FIELD = FertilizedField.getFertilizedField();
+    public static final RegistryObject<Block> FERTILIZED_SOIL = BLOCKS.register(FertilizedSoilBlock.NAME, FertilizedSoilBlock::new);
+    public static final RegistryObject<Block> FERTILIZED_FIELD = BLOCKS.register(FertilizedFieldBlock.NAME, FertilizedFieldBlock::new);
 
     public Blocks() {
         FarmingCompost.LOGGER.info("FarmingCompost Blocks");
