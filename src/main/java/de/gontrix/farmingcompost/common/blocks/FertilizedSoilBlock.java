@@ -1,6 +1,5 @@
 package de.gontrix.farmingcompost.common.blocks;
 
-import de.gontrix.farmingcompost.FarmingCompost;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -31,7 +30,6 @@ public class FertilizedSoilBlock extends Block {
 
     @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (level.isClientSide()) { FarmingCompost.LOGGER.info("isClientSide"); }
         ItemStack held = player.getItemInHand(hand);
 
         if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND && held.canPerformAction(ToolActions.HOE_DIG)){

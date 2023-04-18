@@ -9,6 +9,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,6 +22,7 @@ import net.minecraft.world.level.material.MaterialColor;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.PlantType;
 
 public class FertilizedFieldBlock extends Block {
     public static final String NAME = "fertilized_field";
@@ -47,6 +49,22 @@ public class FertilizedFieldBlock extends Block {
         return SHAPE;
     }
 
+    public boolean isFertile(BlockState state, BlockGetter level, BlockPos pos) {
+        return  true;
+    }
+
+    @Override
+    public boolean canSustainPlant(BlockState blockState, BlockGetter world, BlockPos pos, Direction facing, net.minecraftforge.common.IPlantable plantable) {
+        PlantType type = plantable.getPlantType(world, pos.relative(facing));
+        int i = blockState.getValue(MOISTURE);
+
+        if (PlantType.CROP.equals(type)) {
+            return i > 0;
+        }
+
+        return false;
+    }
+
     @Override
     public void randomTick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
         int i = blockState.getValue(MOISTURE);
@@ -59,7 +77,28 @@ public class FertilizedFieldBlock extends Block {
             }
 
         } else if (i < 7) {
-            serverLevel.setBlock(blockPos, blockState.setValue(MOISTURE, Integer.valueOf(7)), 2);
+            serverLevel.setBlock(blockPos, blockState.setValue(MOISTURE, Integer.valueOf(i + 1)), 2);
+        }
+
+        growExtra(blockState, serverLevel, blockPos, randomSource);
+    }
+
+    private static void growExtra(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
+        BlockPos cropPos = blockPos.offset(0, +1, 0);
+        BlockState cropState = serverLevel.getBlockState(cropPos);
+
+        if (cropState.getBlock() instanceof CropBlock cropBlock) {
+            if (cropBlock.isRandomlyTicking(cropState)) {
+                cropBlock.randomTick(cropState, serverLevel, cropPos, randomSource);
+            }
+
+//            FarmingCompost.LOGGER.info("FarmingCompost cropBlock");
+//            int i = cropState.getValue(cropBlock.getAgeProperty());
+//
+//            if (i < cropBlock.getMaxAge()) {
+//                FarmingCompost.LOGGER.info("FarmingCompost grow");
+//                serverLevel.setBlock(cropPos, cropBlock.getStateForAge(i + 1), 2);
+//            }
         }
     }
 
