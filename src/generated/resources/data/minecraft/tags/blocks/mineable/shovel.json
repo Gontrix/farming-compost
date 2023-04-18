@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "farmingcompost:fertilized_field",
+    "farmingcompost:fertilized_soil"
+  ]
+}
