@@ -14,15 +14,6 @@ public class Blocks {
     public static final RegistryObject<Block> FERTILIZED_FIELD = BLOCKS.register(FertilizedFieldBlock.NAME, FertilizedFieldBlock::new);
 
     public Blocks() {
-        FarmingCompost.LOGGER.info("FarmingCompost Blocks");
         BLOCKS.register(FarmingCompost.MOD_EVENT_BUS);
     }
-//    public static FertilizedField fertilizedField;
-//    public static FertilizedSoil fertilizedSoil;
-
-//    @SubscribeEvent
-//    public static void onBlocksRegistration(final RegistryEvent.Register<Block> blockRegisterEvent) {
-//        blockRegisterEvent.getRegistry().register(FertilizedField.getFertilizedField());
-//        blockRegisterEvent.getRegistry().register(FertilizedSoil.getFertilizedSoil());
-//    }
 }

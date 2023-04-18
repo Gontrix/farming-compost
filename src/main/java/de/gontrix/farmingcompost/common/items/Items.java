@@ -13,10 +13,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class Items {
-//    public static CompostSoil compostSoil;
-//    public static FertilizedField fertilizedField;
-//    public static FertilizedSoil fertilizedSoil;
-
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, FarmingCompost.MODID);
 
     public static final RegistryObject<Item> COMPOST_SOIL = ITEMS.register(CompostSoilItem.NAME, CompostSoilItem::new);
@@ -24,7 +20,6 @@ public class Items {
     public static final RegistryObject<Item> FERTILIZED_FIELD = ITEMS.register(FertilizedFieldBlock.NAME, FertilizedFieldItem::new);
 
     public Items() {
-        FarmingCompost.LOGGER.info("FarmingCompost Items");
         ITEMS.register(FarmingCompost.MOD_EVENT_BUS);
         FarmingCompost.MOD_EVENT_BUS.addListener(this::buildContents);
     }
@@ -40,22 +35,4 @@ public class Items {
                         })
         );
     }
-
-//    private void addCreative(CreativeModeTabEvent.BuildContents event) {
-//        FarmingCompost.LOGGER.info("FarmingCompost addCreative");
-//        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS) {
-//            event.accept(COMPOST_SOIL);
-//            event.accept(FERTILIZED_SOIL);
-//            event.accept(FERTILIZED_FIELD);
-//        }
-//    }
-//    @SubscribeEvent
-//    public static void onItemsRegistration(final RegistryEvent.Register<Item> itemRegisterEvent) {
-
-//        FarmingCompostItemGroup.farmingCompost = FarmingCompostItemGroup.getFarmingCompostItemGroup();
-
-//        itemRegisterEvent.getRegistry().register(CompostSoil.getCompostSoil());
-//        itemRegisterEvent.getRegistry().register(FertilizedField.getFertilizedField());
-//        itemRegisterEvent.getRegistry().register(FertilizedSoil.getFertilizedSoil());
-//    }
 }

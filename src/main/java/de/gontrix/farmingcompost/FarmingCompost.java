@@ -3,9 +3,7 @@ package de.gontrix.farmingcompost;
 import com.mojang.logging.LogUtils;
 import de.gontrix.farmingcompost.common.blocks.Blocks;
 import de.gontrix.farmingcompost.common.items.Items;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
@@ -20,30 +18,27 @@ public class FarmingCompost {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public FarmingCompost() {
-        FarmingCompost.LOGGER.info("FarmingCompost FarmingCompost");
+        FarmingCompost.LOGGER.info("FarmingCompost init");
         MOD_EVENT_BUS = FMLJavaModLoadingContext.get().getModEventBus();
 
         registerCommonEvents();
-        DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> FarmingCompost::registerClientOnlyEvents);
-        DistExecutor.safeRunWhenOn(Dist.DEDICATED_SERVER, () -> FarmingCompost::registerServerOnlyEvents);
+//        DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> FarmingCompost::registerClientOnlyEvents);
+//        DistExecutor.safeRunWhenOn(Dist.DEDICATED_SERVER, () -> FarmingCompost::registerServerOnlyEvents);
     }
 
 
     public static void registerCommonEvents() {
-        FarmingCompost.LOGGER.info("FarmingCompost registerCommonEvents");
         Blocks BLOCKS = new Blocks();
         Items ITEMS = new Items();
     }
 
 
-    public static void registerClientOnlyEvents() {
-        FarmingCompost.LOGGER.info("FarmingCompost registerClientOnlyEvents");
-        MOD_EVENT_BUS.register(de.gontrix.farmingcompost.client.Startup.class);
-    }
-
-    public static void registerServerOnlyEvents() {
-        FarmingCompost.LOGGER.info("FarmingCompost registerClientOnlyEvents");
-        MOD_EVENT_BUS.register(de.gontrix.farmingcompost.client.Startup.class);
-    }
+//    public static void registerClientOnlyEvents() {
+//        MOD_EVENT_BUS.register(de.gontrix.farmingcompost.client.Startup.class);
+//    }
+//
+//    public static void registerServerOnlyEvents() {
+//        MOD_EVENT_BUS.register(de.gontrix.farmingcompost.client.Startup.class);
+//    }
 
 }

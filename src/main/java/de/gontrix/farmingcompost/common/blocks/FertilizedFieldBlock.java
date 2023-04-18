@@ -1,6 +1,5 @@
 package de.gontrix.farmingcompost.common.blocks;
 
-import de.gontrix.farmingcompost.FarmingCompost;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -10,7 +9,6 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.FarmBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -38,7 +36,6 @@ public class FertilizedFieldBlock extends Block {
                 .sound(SoundType.GRAVEL)
         );
         this.registerDefaultState(this.stateDefinition.any().setValue(MOISTURE, 0));
-        FarmingCompost.LOGGER.info("FarmingCompost FertilizedField");
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

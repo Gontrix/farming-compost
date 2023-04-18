@@ -27,17 +27,14 @@ public class FertilizedSoilBlock extends Block {
                 .strength(0.5F)
                 .sound(SoundType.GRAVEL)
         );
-        FarmingCompost.LOGGER.info("FarmingCompost FertilizedSoil");
     }
 
     @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand hand, BlockHitResult hit) {
-        FarmingCompost.LOGGER.info("FarmingCompost InteractionResult");
         if (level.isClientSide()) { FarmingCompost.LOGGER.info("isClientSide"); }
         ItemStack held = player.getItemInHand(hand);
 
         if (!level.isClientSide() && hand == InteractionHand.MAIN_HAND && held.canPerformAction(ToolActions.HOE_DIG)){
-            FarmingCompost.LOGGER.info("FarmingCompost canPerformAction");
             BlockState blockstate = pushEntitiesUp(blockState, Blocks.FERTILIZED_FIELD.get().defaultBlockState(), level, blockPos);
 
             level.setBlockAndUpdate(blockPos, blockstate);
