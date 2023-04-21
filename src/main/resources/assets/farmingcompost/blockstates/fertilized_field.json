@@ -1,5 +1,12 @@
 {
   "variants": {
-    "": { "model": "farmingcompost:block/fertilized_field" }
+    "moisture=0": { "model": "farmingcompost:block/fertilized_field" },
+    "moisture=1": { "model": "farmingcompost:block/fertilized_field_wet" },
+    "moisture=2": { "model": "farmingcompost:block/fertilized_field_wet" },
+    "moisture=3": { "model": "farmingcompost:block/fertilized_field_wet" },
+    "moisture=4": { "model": "farmingcompost:block/fertilized_field_wet" },
+    "moisture=5": { "model": "farmingcompost:block/fertilized_field_wet" },
+    "moisture=6": { "model": "farmingcompost:block/fertilized_field_wet" },
+    "moisture=7": { "model": "farmingcompost:block/fertilized_field_wet" }
   }
 }
