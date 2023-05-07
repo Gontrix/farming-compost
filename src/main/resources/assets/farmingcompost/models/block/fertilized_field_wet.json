@@ -5,9 +5,8 @@
 		"0": "farmingcompost:block/gray",
 		"1": "farmingcompost:block/gray_light",
 		"2": "minecraft:block/stone",
-		"3": "farmingcompost:block/fertilized_field/field_top",
-		"4": "farmingcompost:block/fertilized_field/field_wet",
-		"particle": "minecraft:block/dirt"
+		"3": "farmingcompost:block/fertilized_field",
+		"particle": "farmingcompost:block/fertilized_field"
 	},
 	"elements": [
 		{
@@ -207,12 +206,12 @@
 			"from": [0, 0, 0],
 			"to": [16, 14, 16],
 			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#4"},
-				"east": {"uv": [0, 0, 16, 16], "texture": "#4"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#4"},
-				"west": {"uv": [0, 0, 16, 16], "texture": "#4"},
-				"up": {"uv": [0, 0, 16, 16], "texture": "#4"},
-				"down": {"uv": [0, 0, 16, 16], "texture": "#4"}
+				"north": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#3"}
 			}
 		}
 	],
