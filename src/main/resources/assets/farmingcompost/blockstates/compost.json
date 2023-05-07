@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": { "model": "farmingcompost:block/compost" }
+    "level=0": { "model": "farmingcompost:block/compost" },
+    "level=1": { "model": "farmingcompost:block/compost_half" },
+    "level=2": { "model": "farmingcompost:block/compost_full" }
   }
 }
