@@ -37,7 +37,7 @@ public class CompostBlockEntity extends BlockEntity implements MenuProvider {
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 1024*16;
+    private int maxProgress = 1024*8;
     private static final int compostSoilSlot = 9;
     private static final int maxInputSlot = 8;
 

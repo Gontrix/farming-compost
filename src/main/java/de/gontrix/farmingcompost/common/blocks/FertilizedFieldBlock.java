@@ -127,4 +127,6 @@ public class FertilizedFieldBlock extends Block {
     public boolean isPathfindable(@NotNull BlockState blockState, @NotNull BlockGetter blockGetter, @NotNull BlockPos blockPos, @NotNull PathComputationType pathComputationType) {
         return false;
     }
+
+
 }

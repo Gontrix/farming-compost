@@ -38,7 +38,7 @@ public class CompostScreen extends AbstractContainerScreen<CompostMenu> {
 
     private void renderProgressArrow(PoseStack pPoseStack, int x, int y) {
         if(menu.isCrafting()) {
-            blit(pPoseStack, x + 95, y + 29, 176, 0, 11, menu.getScaledProgress());
+            blit(pPoseStack, x + 95, y + 29, 176, 0, 12, menu.getScaledProgress());
         }
     }
 
