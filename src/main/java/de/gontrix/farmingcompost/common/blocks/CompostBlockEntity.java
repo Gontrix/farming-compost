@@ -237,7 +237,7 @@ public class CompostBlockEntity extends BlockEntity implements MenuProvider {
         return inventory.getItem(compostSoilSlot).getMaxStackSize() > inventory.getItem(compostSoilSlot).getCount();
     }
 
-    private static boolean isValidItem(ItemStack stack) {
+    public static boolean isValidItem(ItemStack stack) {
         return !stack.isEmpty() && stack.getItem().isEdible();
     }
 }
